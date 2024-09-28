@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Hack Yeah"
-run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://Hub.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [dotnet]
