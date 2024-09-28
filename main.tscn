@@ -4,7 +4,36 @@
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_cqm07"]
 [ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="2_gtvq1"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_hwgv7"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func save_game():
+	var file = FileAccess.open(Global.GAME_SAVE_PATH, FileAccess.WRITE)
+	var save_dict = {
+		\"pos\": var_to_str(PlayerVariables.pos),
+		\"score\": var_to_str(PlayerVariables.score)
+	}
+	var json = JSON.stringify(save_dict)
+	file.store_line(json)
+	file.close()
+
+func _exit_tree():
+	save_game()
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_hwgv7")
 
 [node name="Hub" parent="." instance=ExtResource("1_ygjp8")]
 
