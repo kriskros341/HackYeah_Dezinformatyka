@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://da5ggd8bi6710"]
+[gd_scene load_steps=7 format=3 uid="uid://da5ggd8bi6710"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="2_stxlq"]
+[ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="3_o65eb"]
 [ext_resource type="PackedScene" uid="uid://cv6nsc77ufugq" path="res://Computer.tscn" id="3_xpkrp"]
 
 [sub_resource type="GDScript" id="GDScript_4noxx"]
+script/source = "# Odwołanie do gracza
+onready var player = get_node(\"/root/scenes/player\")
+
+func _process(delta):
+	# Dopasuj pozycję tła do pozycji gracza
+	position.x = player.position.x
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0ght"]
 resource_name = "baseTileSet"
@@ -88,6 +96,10 @@ sources/0 = SubResource("TileSetAtlasSource_f0ght")
 
 [node name="Hub" type="Node2D"]
 script = SubResource("GDScript_4noxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(282, 434)
+texture = ExtResource("3_o65eb")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6ku6r")

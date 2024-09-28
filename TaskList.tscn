@@ -43,15 +43,20 @@ offset_bottom = 23.8
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "SIEMA"
+text = "POZIOM 1"
 label_settings = SubResource("LabelSettings_f1tam")
 
 [node name="Label2" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "SIEMA2"
+text = "POZIOM 2"
 label_settings = SubResource("LabelSettings_njbtl")
 
 [node name="Label3" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "SIEMA3"
+text = "POZIOM 3"
+label_settings = SubResource("LabelSettings_dyeyk")
+
+[node name="Label4" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "WYJŚCIE"
 label_settings = SubResource("LabelSettings_dyeyk")

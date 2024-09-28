@@ -13,6 +13,8 @@ var screen_size
 func _ready():
 	#animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
+	position.x = 300
+	position.y = -300
 	position = PlayerVariables.pos
 
 #@onready var animated_sprite = $AnimationPlayer
