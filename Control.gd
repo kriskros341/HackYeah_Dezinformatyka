@@ -1,6 +1,6 @@
 extends Control
 
-var EXIT_IDX = 0
+var EXIT_IDX = 3
 var current_idx = 0
 var items = []
 
@@ -19,7 +19,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("interaction"):
 		if current_idx == EXIT_IDX:
 			Global.goto_scene(Global.MAIN_SCENE_PATH)
-		elif current_idx == 1:
+		elif current_idx == 0:
 			PlayerVariables.pos = Vector2.ZERO
 			Global.goto_scene(Global.LEVEL1_SCENE_PATH)
 	

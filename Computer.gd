@@ -5,7 +5,8 @@ var is_near = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 	
 func _ready():
-	animated_sprite.play("pc")
+	pass
+	# animated_sprite.play("pc")
 	
 func _process(delta):
 	if is_near and Input.is_action_just_pressed("interaction"):
