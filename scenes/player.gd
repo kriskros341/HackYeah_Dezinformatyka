@@ -13,14 +13,12 @@ var screen_size
 func _ready():
 	#animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
+	position = PlayerVariables.pos
 
 #@onready var animated_sprite = $AnimationPlayer
 #@onready var animated_tail_sprite = $AnimationPlayer2
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interaction"):
-		$"../TrashPiles".on_scavenge_trash_pile()
-
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		$Node2D.scale.x = direction
@@ -28,6 +26,8 @@ func _process(delta: float) -> void:
 	else:
 		pass
 		#animated_sprite.stop()
+		
+	PlayerVariables.pos = position
 		
 
 func _physics_process(delta):
