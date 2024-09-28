@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://da5ggd8bi6710"]
+[gd_scene load_steps=8 format=3 uid="uid://da5ggd8bi6710"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="2_stxlq"]
+[ext_resource type="PackedScene" uid="uid://dxq4onkfvk63c" path="res://brat.tscn" id="3_xey2m"]
 [ext_resource type="PackedScene" uid="uid://cv6nsc77ufugq" path="res://Computer.tscn" id="3_xpkrp"]
+[ext_resource type="Script" path="res://brat.gd" id="4_ibl6t"]
 
 [sub_resource type="GDScript" id="GDScript_4noxx"]
 
@@ -98,3 +100,7 @@ layer_0/tile_data = PackedInt32Array(1179648, 196608, 4, 1179649, 196608, 4, 117
 position = Vector2(542, 489)
 
 [node name="SceneSwitcher" type="Node" parent="."]
+
+[node name="brat" parent="." instance=ExtResource("3_xey2m")]
+position = Vector2(370, 561)
+script = ExtResource("4_ibl6t")

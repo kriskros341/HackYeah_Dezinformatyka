@@ -1,8 +1,83 @@
-[gd_scene load_steps=5 format=3 uid="uid://d30xbb6ktsf"]
+[gd_scene load_steps=11 format=3 uid="uid://d30xbb6ktsf"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_4s8sa"]
-[ext_resource type="Texture2D" uid="uid://cu2fu4lb15pgb" path="res://New_Piskel7.png" id="2_3o6fc"]
-[ext_resource type="Texture2D" uid="uid://cwi3xn1u50sv4" path="res://assets/New_Piskel8.png" id="3_4rgxf"]
+[ext_resource type="Texture2D" uid="uid://cu2fu4lb15pgb" path="res://run.png" id="2_3o6fc"]
+[ext_resource type="Texture2D" uid="uid://bik6ccemya0d5" path="res://tailattack.png" id="3_u63rh"]
+
+[sub_resource type="Animation" id="Animation_uxed7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_np50a"]
+resource_name = "attack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.533333, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 3, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihwbb"]
+_data = {
+"RESET": SubResource("Animation_uxed7"),
+"attack": SubResource("Animation_np50a")
+}
+
+[sub_resource type="Animation" id="Animation_s3eq7"]
+resource_name = "run"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 4]
+}
+
+[sub_resource type="Animation" id="Animation_bmxjv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1uqs6"]
+_data = {
+"RESET": SubResource("Animation_bmxjv"),
+"run": SubResource("Animation_s3eq7")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eaqw"]
 size = Vector2(27, 17)
@@ -18,13 +93,21 @@ zoom = Vector2(3, 3)
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("2_3o6fc")
 vframes = 5
-frame = 3
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
-position = Vector2(-9, -10)
-texture = ExtResource("3_4rgxf")
+position = Vector2(-2, 7)
+texture = ExtResource("3_u63rh")
 vframes = 5
-frame = 4
+
+[node name="TailAnimation" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ihwbb")
+}
+
+[node name="BodyAnimation" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_1uqs6")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 7.5)

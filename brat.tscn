@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxq4onkfvk63c"]
+
+[ext_resource type="Texture2D" uid="uid://p381lpic1k87" path="res://New_Piskel16.png" id="1_iqtgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syflo"]
+size = Vector2(29, 22)
+
+[sub_resource type="Animation" id="Animation_ao2sg"]
+resource_name = "brat"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ul2xw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2fmq"]
+_data = {
+"RESET": SubResource("Animation_ul2xw"),
+"brat": SubResource("Animation_ao2sg")
+}
+
+[node name="brat" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_iqtgf")
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_syflo")
+
+[node name="bratAnime" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o2fmq")
+}

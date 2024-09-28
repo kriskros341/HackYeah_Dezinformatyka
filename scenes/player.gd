@@ -18,17 +18,25 @@ func _ready():
 	position = PlayerVariables.pos
 
 #@onready var animated_sprite = $AnimationPlayer
-#@onready var animated_tail_sprite = $AnimationPlayer2
+
+@onready var tail = $Node2D/TailAnimation
+@onready var body = $Node2D/BodyAnimation
 
 func _process(delta: float) -> void:
 	var direction = Input.get_axis("ui_left", "ui_right")
+	body.play("run")
 	if direction:
 		$Node2D.scale.x = direction
-		#animated_sprite.play("run")
+		
 	else:
+		body.stop()
 		pass
 		#animated_sprite.stop()
 		
+	if Input.is_action_just_pressed("interaction"):
+		tail.play("attack")
+		
+			
 	PlayerVariables.pos = position
 		
 
