@@ -2,6 +2,7 @@ extends Node
 
 var MAIN_SCENE_PATH = "res://main.tscn"
 var TASKLIST_SCENE_PATH = "res://TaskList.tscn"
+var LEVEL1_SCENE_PATH = "res://Level1.tscn"
 var current_scene = null
 
 func _ready():
