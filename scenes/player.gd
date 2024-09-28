@@ -13,6 +13,18 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 
+@onready var animated_sprite = $AnimationPlayer
+
+var direction = "Right"
+
+func _process(delta: float) -> void:
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction:
+		$Sprite2D.scale.x = direction
+		animated_sprite.play("run")	
+	else:
+		animated_sprite.stop()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
