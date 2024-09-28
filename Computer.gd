@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_inside and Input.is_action_just_released("interaction"):
+	if is_inside and Input.is_action_just_pressed("interaction"):
 		run_interaction()
 
 func run_interaction():
