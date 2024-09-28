@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://sovj44rdtayi"]
+
+[ext_resource type="PackedScene" uid="uid://da5ggd8bi6710" path="res://Hub.tscn" id="1_ygjp8"]
+[ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_cqm07"]
+[ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="2_gtvq1"]
+[ext_resource type="Script" path="res://bg.gd" id="3_6drai"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="bg2" type="Sprite2D" parent="."]
+position = Vector2(413, 411)
+scale = Vector2(1.24316, 1.32244)
+texture = ExtResource("2_gtvq1")
+script = ExtResource("3_6drai")
+
+[node name="Hub" parent="." instance=ExtResource("1_ygjp8")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_cqm07")]
