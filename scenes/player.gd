@@ -54,9 +54,6 @@ func _physics_process(delta):
 	if position.x - sprite_width / 2 < 0:
 		position.x = sprite_width / 2
 		velocity.x = 0  # Stop movement if hitting left edge
-	elif position.x + sprite_width / 2 > screen_size.x:
-		position.x = screen_size.x - sprite_width / 2
-		velocity.x = 0  # Stop movement if hitting right edge
 
 	move_and_slide()
 	
