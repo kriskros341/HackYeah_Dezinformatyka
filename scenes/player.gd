@@ -11,19 +11,20 @@ var jumps_left = 1  # Allow one initial jump and one double jump
 
 var screen_size
 func _ready():
+	animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
 
 @onready var animated_sprite = $AnimationPlayer
-
-var direction = "Right"
+@onready var animated_tail_sprite = $AnimationPlayer2
 
 func _process(delta: float) -> void:
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
-		$Sprite2D.scale.x = direction
-		animated_sprite.play("run")	
+		$Node2D.scale.x = direction
+		animated_sprite.play("run")
 	else:
 		animated_sprite.stop()
+		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -48,7 +49,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-	var sprite_width = $Sprite2D.texture.get_width()
+	var sprite_width = $Node2D/Sprite2D.texture.get_width()
 	# Check for screen boundaries (only for x)
 	if position.x - sprite_width / 2 < 0:
 		position.x = sprite_width / 2

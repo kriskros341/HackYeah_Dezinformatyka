@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d30xbb6ktsf"]
+[gd_scene load_steps=9 format=3 uid="uid://d30xbb6ktsf"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_4s8sa"]
 [ext_resource type="Texture2D" uid="uid://cu2fu4lb15pgb" path="res://New_Piskel7.png" id="2_3o6fc"]
+[ext_resource type="Texture2D" uid="uid://cwi3xn1u50sv4" path="res://assets/New_Piskel8.png" id="3_4rgxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eaqw"]
 size = Vector2(27, 17)
@@ -11,10 +12,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Node2D/Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -28,7 +41,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,18 +51,32 @@ tracks/0/keys = {
 "values": [0, 0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_sbjni"]
+resource_name = "idle_tale"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node2D/Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tmgpu"]
 _data = {
 "RESET": SubResource("Animation_npdhb"),
+"idle_tale": SubResource("Animation_sbjni"),
 "run": SubResource("Animation_f273o")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_4s8sa")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3o6fc")
-vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 7.5)
@@ -61,3 +88,21 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_3o6fc")
+vframes = 5
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-9, -10)
+texture = ExtResource("3_4rgxf")
+vframes = 5
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayer")
+libraries = {
+"": SubResource("AnimationLibrary_tmgpu")
+}
