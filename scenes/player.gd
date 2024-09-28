@@ -9,6 +9,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Variables to handle jumping
 var jumps_left = 1  # Allow one initial jump and one double jump
 
+var screen_size
+func _ready():
+	screen_size = get_viewport_rect().size
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -31,5 +35,15 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	var sprite_width = $Sprite2D.texture.get_width()
+	# Check for screen boundaries (only for x)
+	if position.x - sprite_width / 2 < 0:
+		position.x = sprite_width / 2
+		velocity.x = 0  # Stop movement if hitting left edge
+	elif position.x + sprite_width / 2 > screen_size.x:
+		position.x = screen_size.x - sprite_width / 2
+		velocity.x = 0  # Stop movement if hitting right edge
 
 	move_and_slide()
+	
