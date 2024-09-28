@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ftrtthyt76tj"]
+
+[ext_resource type="Texture2D" uid="uid://qbq7wiexcee4" path="res://assets/spidererer.png" id="1_7gbwx"]
+[ext_resource type="Script" path="res://foes/Spider.gd" id="1_bxekb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvt6j"]
+size = Vector2(29, 20)
+
+[node name="Spider" type="CharacterBody2D"]
+script = ExtResource("1_bxekb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7gbwx")
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_tvt6j")
+
+[node name="Behavior" type="Node2D" parent="."]
