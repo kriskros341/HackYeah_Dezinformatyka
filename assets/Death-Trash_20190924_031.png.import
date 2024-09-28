@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmpy23hh32ph7"
-path="res://.godot/imported/tilesetOpenGame.png-fa9582e93d7475bd876518652190d9a8.ctex"
+uid="uid://pdyodonreq83"
+path="res://.godot/imported/Death-Trash_20190924_031.png-d8a09f1df28be4adda682db8d2d1c2e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesetOpenGame.png"
-dest_files=["res://.godot/imported/tilesetOpenGame.png-fa9582e93d7475bd876518652190d9a8.ctex"]
+source_file="res://assets/Death-Trash_20190924_031.png"
+dest_files=["res://.godot/imported/Death-Trash_20190924_031.png-d8a09f1df28be4adda682db8d2d1c2e1.ctex"]
 
 [params]
 

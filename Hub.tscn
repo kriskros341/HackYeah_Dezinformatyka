@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://da5ggd8bi6710"]
 
-[ext_resource type="Texture2D" uid="uid://cw725h5xe1kbb" path="res://scenes/blue-sky-background-in-pixel-art-style-vector.jpg" id="1_qhrfh"]
-[ext_resource type="Texture2D" uid="uid://cs4pf01jgwq6l" path="res://tilesetOpenGame.png" id="2_stxlq"]
+[ext_resource type="Texture2D" uid="uid://pdyodonreq83" path="res://assets/Death-Trash_20190924_031.png" id="1_515iu"]
+[ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="2_stxlq"]
 [ext_resource type="PackedScene" uid="uid://cv6nsc77ufugq" path="res://Computer.tscn" id="3_xpkrp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0ght"]
@@ -216,9 +216,9 @@ sources/0 = SubResource("TileSetAtlasSource_f0ght")
 [node name="Hub" type="Node2D"]
 
 [node name="Blue-sky-background-in-pixel-art-style-vector" type="Sprite2D" parent="."]
-position = Vector2(601, 228)
-scale = Vector2(1.39583, 0.744898)
-texture = ExtResource("1_qhrfh")
+position = Vector2(596, 312)
+scale = Vector2(2.61238, 2.67242)
+texture = ExtResource("1_515iu")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -100)

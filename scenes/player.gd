@@ -11,19 +11,23 @@ var jumps_left = 1  # Allow one initial jump and one double jump
 
 var screen_size
 func _ready():
-	animated_tail_sprite.play("idle_tale")
+	#animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
 
-@onready var animated_sprite = $AnimationPlayer
-@onready var animated_tail_sprite = $AnimationPlayer2
+#@onready var animated_sprite = $AnimationPlayer
+#@onready var animated_tail_sprite = $AnimationPlayer2
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interaction"):
+		$"../TrashPiles".on_scavenge_trash_pile()
+
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		$Node2D.scale.x = direction
-		animated_sprite.play("run")
+		#animated_sprite.play("run")
 	else:
-		animated_sprite.stop()
+		pass
+		#animated_sprite.stop()
 		
 
 func _physics_process(delta):
@@ -56,4 +60,13 @@ func _physics_process(delta):
 		velocity.x = 0  # Stop movement if hitting left edge
 
 	move_and_slide()
+	
+func _on_trash_pile_body_entered(body):
+	print(body)
+	pass # Replace with function body.
+
+
+func _on_trash_pile_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	print(area_rid, area, area_shape_index, local_shape_index)
+	pass # Replace with function body.
 	
