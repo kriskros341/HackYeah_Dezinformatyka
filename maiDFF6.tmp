@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://sovj44rdtayi"]
+
+[ext_resource type="PackedScene" uid="uid://cps7b03ohhfh7" path="res://slideshow.tscn" id="1_nwyu1"]
+[ext_resource type="PackedScene" uid="uid://da5ggd8bi6710" path="res://Hub.tscn" id="1_ygjp8"]
+[ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_cqm07"]
+[ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="2_gtvq1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="slideshow" parent="." instance=ExtResource("1_nwyu1")]
+
+[node name="Hub" parent="." instance=ExtResource("1_ygjp8")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_cqm07")]
+position = Vector2(494, 315)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(-100, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(534, 339)
+scale = Vector2(1.86062, 1.86062)
+texture = ExtResource("2_gtvq1")
