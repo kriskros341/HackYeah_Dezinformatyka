@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmpy23hh32ph7"
-path="res://.godot/imported/tilesetOpenGame.png-fa9582e93d7475bd876518652190d9a8.ctex"
+uid="uid://bj5xfmqvlooom"
+path="res://.godot/imported/New_Piskel11.png-c24435ff44e1ea26a49e67e509b78b3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesetOpenGame.png"
-dest_files=["res://.godot/imported/tilesetOpenGame.png-fa9582e93d7475bd876518652190d9a8.ctex"]
+source_file="res://assets/New_Piskel11.png"
+dest_files=["res://.godot/imported/New_Piskel11.png-c24435ff44e1ea26a49e67e509b78b3a.ctex"]
 
 [params]
 
