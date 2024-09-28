@@ -13,6 +13,7 @@ var screen_size
 func _ready():
 	animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
+	position = PlayerVariables.pos
 
 @onready var animated_sprite = $AnimationPlayer
 @onready var animated_tail_sprite = $AnimationPlayer2
@@ -24,6 +25,8 @@ func _process(delta: float) -> void:
 		animated_sprite.play("run")
 	else:
 		animated_sprite.stop()
+		
+	PlayerVariables.pos = position
 		
 
 func _physics_process(delta):
@@ -56,4 +59,3 @@ func _physics_process(delta):
 		velocity.x = 0  # Stop movement if hitting left edge
 
 	move_and_slide()
-	

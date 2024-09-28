@@ -14,8 +14,12 @@ config/name="Hack Yeah"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
-<<<<<<<HEADrun/main_scene="res://Hub.tscn"
-|||||||parentof2504616(asdadsa)run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://main.tscn"
+
+[autoload]
+
+Global="*res://global.gd"
+PlayerVariables="*res://playerVariables.gd"
 
 [dotnet]
 
