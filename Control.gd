@@ -23,11 +23,11 @@ func _process(delta):
 			PlayerVariables.pos = Vector2.ZERO
 			Global.goto_scene(Global.LEVEL1_SCENE_PATH)
 	
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("ui_up"):
 		current_idx -= 1
 		if current_idx < 0:
 			current_idx = items.size() - 1
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("ui_down"):
 		current_idx += 1
 		if current_idx >= items.size():
 			current_idx = 0
