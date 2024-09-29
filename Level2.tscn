@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://maydqyx2jh4q"]
+[gd_scene load_steps=9 format=3 uid="uid://maydqyx2jh4q"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="1_frkbr"]
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_xpg5g"]
 [ext_resource type="Script" path="res://TrashPiles.gd" id="3_oo7bk"]
 [ext_resource type="PackedScene" uid="uid://chfk7ghtmg3vw" path="res://misc/TrashPile.tscn" id="4_yvyco"]
 [ext_resource type="PackedScene" uid="uid://ch2f5p8syfhhf" path="res://foes/Spider.tscn" id="5_h826i"]
+[ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="6_1tqhg"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y82uk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iyr3d"]
 texture = ExtResource("1_frkbr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -60,7 +61,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_y82uk")
+sources/0 = SubResource("TileSetAtlasSource_iyr3d")
 
 [node name="Level2" type="Node2D"]
 
@@ -106,3 +107,14 @@ position = Vector2(337, 211)
 
 [node name="Spider2" parent="TrashPiles" instance=ExtResource("5_h826i")]
 position = Vector2(1777, 299)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(-100, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(652, 142)
+scale = Vector2(3.06543, 2.92604)
+texture = ExtResource("6_1tqhg")
