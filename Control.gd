@@ -14,10 +14,13 @@ func _ready():
 		description = "Witajcie, porzucone lemury! Wasze zadanie jest proste – CanCo\nzostawiło tu swoje śmieci, a wy musicie je posprzątać.\nPoszukajcie brakujących części maszyny do recyklingu.\nOstrzegam jednak – w okolicy są radioaktywne pająki. Chyba coś im nie\nwyszło podczas eksperymentów... Szykujcie swoje ogony i ruszajcie\nsprzątać, zanim coś was ugryzie!"
 	elif PlayerVariables.finished_levels == 1:
 		text = "Poziom 2"
-		description = "Lemury, gratulacje, przetrwaliście pająki! Teraz czas na coś większego – radioaktywne skały. CanCo nie tylko zanieczyszczało Madagaskar odpadami, ale również skaziło go promieniowaniem. Musicie zebrać kolejne części do maszyny recyklingowej, ale uważajcie na te świecące kamienie – to nie lampki choinkowe!"
+		description = "Lemury, gratulacje, przetrwaliście pająki! Teraz czas na coś większego – radioaktywne skały. CanCo nie tylko\nzanieczyszczało Madagaskar odpadami, ale również skaziło go promieniowaniem.\nMusicie zebrać kolejne części do maszyny recyklingowej, ale uważajcie na te świecące\nkamienie – to nie lampki choinkowe!"
 	elif PlayerVariables.finished_levels == 2:
 		text = "Poziom 3"
-		description = "Czas aktywować maszynę recyklingową! Wszystkie części są na miejscu, ale nie będzie to łatwe. Pająki wracają, a skały wciąż są w pobliżu. CanCo zostawiło po sobie niezły bałagan, ale jeśli dacie radę to posprzątać, macie szansę przywrócić Madagaskarowi dawną chwałę. Zróbcie to, zanim wyspa stanie się jeszcze jednym wysypiskiem!"
+		description = "Czas aktywować maszynę recyklingową! Wszystkie części są na miejscu, ale nie\nbędzie to łatwe. Pająki wracają, a skały wciąż są w pobliżu. CanCo\nzostawiło po sobie niezły bałagan, ale jeśli dacie radę to posprzątać, macie szansę\nprzywrócić Madagaskarowi dawną chwałę. Zróbcie to, zanim wyspa stanie się jeszcze jednym wysypiskiem!"
+	elif PlayerVariables.finished_levels == 3:
+		text = ""
+		description = "Zrobiłeś dokładnie to, czego od ciebie oczekiwałem...\nTeraz wszystko jest moje. Świat, który próbowałeś ocalić, nigdy nie miał szans.\nGra skończona, ale to dopiero początek...\n'Nigdy nie wiesz kto jest po drugiej stronie'"
 	level_label.text = text
 	level_description.text = description
 	level_description.position.y = 60
