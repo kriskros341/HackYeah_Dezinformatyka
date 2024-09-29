@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://maix2sw3mmy4"]
+[gd_scene load_steps=9 format=3 uid="uid://maix2sw3mmy4"]
 
 [ext_resource type="Script" path="res://Slides.gd" id="1_i4qw0"]
 [ext_resource type="Texture2D" uid="uid://btwfmy3udxnbv" path="res://slajd1.png" id="1_ky23q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://drhqqyjenk87o" path="res://slajd3.png" id="3_brn7g"]
 [ext_resource type="Texture2D" uid="uid://cwr1cvk1jpskn" path="res://slajd4.png" id="4_wuxqy"]
 [ext_resource type="Texture2D" uid="uid://crfbqnq05ahvv" path="res://slajd5.png" id="5_j6fdl"]
+[ext_resource type="Texture2D" uid="uid://d3e1g11xxhk0o" path="res://assets/arrow.png" id="7_o6mhd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fpjtx"]
 animations = [{
@@ -40,3 +41,8 @@ sprite_frames = SubResource("SpriteFrames_fpjtx")
 frame_progress = 0.904629
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1792, 978)
+scale = Vector2(2.82031, 1.9375)
+texture = ExtResource("7_o6mhd")
