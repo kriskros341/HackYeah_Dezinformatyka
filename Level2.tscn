@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_xpg5g"]
 [ext_resource type="Script" path="res://TrashPiles.gd" id="3_oo7bk"]
 [ext_resource type="PackedScene" uid="uid://chfk7ghtmg3vw" path="res://misc/TrashPile.tscn" id="4_yvyco"]
-[ext_resource type="PackedScene" uid="uid://ch2f5p8syfhhf" path="res://foes/Spider.tscn" id="5_h826i"]
+[ext_resource type="PackedScene" uid="uid://ftrtthyt76tj" path="res://foes/Spider.tscn" id="5_h826i"]
 [ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="6_1tqhg"]
+[ext_resource type="PackedScene" uid="uid://77soe4eju1ye" path="res://Cog.tscn" id="7_s1e5i"]
+[ext_resource type="PackedScene" uid="uid://csr6swyt1j22l" path="res://HUD/Counters.tscn" id="8_1gynn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iyr3d"]
 texture = ExtResource("1_frkbr")
@@ -180,12 +182,6 @@ position = Vector2(1999, -16)
 [node name="TrashPile9" parent="TrashPiles" instance=ExtResource("4_yvyco")]
 position = Vector2(1999, 178)
 
-[node name="Spider" parent="TrashPiles" instance=ExtResource("5_h826i")]
-position = Vector2(337, 211)
-
-[node name="Spider2" parent="TrashPiles" instance=ExtResource("5_h826i")]
-position = Vector2(1777, 299)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -196,3 +192,20 @@ motion_offset = Vector2(-100, -100)
 position = Vector2(652, 142)
 scale = Vector2(3.06543, 2.92604)
 texture = ExtResource("6_1tqhg")
+
+[node name="Cog" parent="." instance=ExtResource("7_s1e5i")]
+position = Vector2(2234, 255)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Counters" parent="CanvasLayer" instance=ExtResource("8_1gynn")]
+offset_left = -1.0
+offset_top = -9.0
+offset_right = -1.0
+offset_bottom = -9.0
+
+[node name="Spider2" parent="." instance=ExtResource("5_h826i")]
+position = Vector2(1777, 299)
+
+[node name="Spider" parent="." instance=ExtResource("5_h826i")]
+position = Vector2(337, 211)

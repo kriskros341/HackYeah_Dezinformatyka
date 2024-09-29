@@ -42,12 +42,16 @@ func _process(delta):
 	if Input.is_action_just_pressed("interaction"):
 		if current_idx == EXIT_IDX:
 			Global.goto_scene(Global.MAIN_SCENE_PATH)
-		elif current_idx == 0:
+			return
+		elif PlayerVariables.finished_levels == 0:
 			PlayerVariables.pos = Vector2.ZERO
 			Global.goto_scene(Global.LEVEL1_SCENE_PATH)
-		elif current_idx == 1:
+		elif PlayerVariables.finished_levels == 1:
 			PlayerVariables.pos = Vector2.ZERO
 			Global.goto_scene(Global.LEVEL2_SCENE_PATH)
+		elif PlayerVariables.finished_levels == 2:
+			PlayerVariables.pos = Vector2.ZERO
+			Global.goto_scene(Global.LEVEL3_SCENE_PATH)
 	
 	if Input.is_action_just_pressed("ui_up"):
 		current_idx -= 1

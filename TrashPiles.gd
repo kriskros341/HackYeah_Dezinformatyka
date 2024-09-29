@@ -37,7 +37,6 @@ func on_trash_pile_entered(body, trashPile):
 func on_scavenge_trash_pile():
 	for i in range(get_child_count()):
 		var trashPile = get_child(i)
-
 		if trashPile.is_inside:
 			trashPile.scavenge()
 
