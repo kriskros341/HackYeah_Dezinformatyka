@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ceay06o3cajst"]
+[gd_scene load_steps=11 format=3 uid="uid://bolktoku2faux"]
 
 [ext_resource type="Script" path="res://scenes/OtherPlayer.gd" id="1_4va0b"]
 [ext_resource type="Texture2D" uid="uid://cu2fu4lb15pgb" path="res://run.png" id="2_k7hbx"]

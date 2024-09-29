@@ -117,13 +117,13 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 7.5)
+position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_0eaqw")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-0.5, 7.5)
+position = Vector2(-1, 3)
 shape = SubResource("RectangleShape2D_2f2kj")
 
 [node name="Timer" type="Timer" parent="."]
@@ -132,7 +132,7 @@ shape = SubResource("RectangleShape2D_2f2kj")
 script = ExtResource("4_uim5f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(10, -1)
+position = Vector2(10, -5)
 shape = SubResource("RectangleShape2D_8rqg1")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
