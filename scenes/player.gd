@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jumps_left = 1  # Allow one initial jump and one double jump
 
 var screen_size
+
 func _ready():
 	#animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
@@ -79,4 +80,4 @@ func _on_trash_pile_body_entered(body):
 func _on_trash_pile_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	print(area_rid, area, area_shape_index, local_shape_index)
 	pass # Replace with function body.
-	
+
