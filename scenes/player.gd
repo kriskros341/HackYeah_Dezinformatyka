@@ -9,9 +9,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Variables to handle jumping
 var jumps_left = 1  # Allow one initial jump and one double jump
 
+@onready var brat = $"res://brat.tscn"
 var screen_size
 
 func _ready():
+
 	#animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
 	position.x = 300
@@ -42,7 +44,6 @@ func _process(delta: float) -> void:
 		
 
 func _physics_process(delta):
-	print("PLAYER")
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -73,6 +74,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+
 func _on_trash_pile_body_entered(body):
 	print(body)
 	pass # Replace with function body.
@@ -81,3 +83,5 @@ func _on_trash_pile_area_shape_entered(area_rid, area, area_shape_index, local_s
 	print(area_rid, area, area_shape_index, local_shape_index)
 	pass # Replace with function body.
 
+func  _on_camera_far():
+	$Camera2D.scale = Vector2(1, 1)

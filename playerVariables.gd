@@ -4,12 +4,23 @@ var score
 var pos: Vector2
 var pos2: Vector2
 var isBratActive: bool
+var lemurHealth: int
 
 signal increment_score_signal
+signal lemur_health
 
 func increment_score():
 	score += 1
 	increment_score_signal.emit()
+	
+func lemur_damage():
+	lemurHealth -= 1
+	lemur_health.emit()
+
+
+func reset_health():
+	lemurHealth = 3
+	lemur_health.emit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +36,7 @@ func load_game():
 		PlayerVariables.pos2 = Vector2.ZERO
 		PlayerVariables.score = 0
 		PlayerVariables.isBratActive = false
+		PlayerVariables.lemurHealth = 3
 		return;
 		
 	var file = FileAccess.open(Global.GAME_SAVE_PATH, FileAccess.READ)

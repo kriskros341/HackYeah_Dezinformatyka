@@ -11,6 +11,7 @@ func _ready():
 func _process(delta):
 	if is_near and Input.is_action_just_pressed("interaction"):
 		Global.goto_scene(Global.TASKLIST_SCENE_PATH)
+		PlayerVariables.reset_health()
 
 func _on_body_entered(body):
 	if body.name == "CharacterBody2D":

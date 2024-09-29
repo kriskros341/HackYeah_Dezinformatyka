@@ -1,6 +1,7 @@
 extends Control
 
 var label = Label.new()
+var healthLabel = Label.new()
 
 func _ready():
 	
@@ -25,11 +26,31 @@ func _ready():
 	label.add_theme_color_override("font_color", Color("000000"))
 	label.text = str(PlayerVariables.score)
 	container.add_child(label)
-	PlayerVariables.connect("increment_score_signal", func(): _on_my_signal(container))
 	
+	
+	healthLabel.add_theme_color_override("font_color", Color("000000"))
+	healthLabel.text = 'x ' + str(PlayerVariables.lemur_health)
+
+	PlayerVariables.connect("increment_score_signal", func(): _on_my_signal(container))
+	PlayerVariables.connect("lemur_damage", _on_lemur_health_refresh)
+	
+	
+	var texture_rect2 = TextureRect.new()
+	var texture2 = load("res://assets/heart.png")  # Load your icon image here
+	
+	# Set the size for the TextureRect (absolute size)
+	texture_rect2.texture = texture2
+	texture_rect2.scale = texture_rect2.scale * 0.1
+	container.add_child(texture_rect2)
+
+	healthLabel.add_theme_color_override("font_color", Color("000000"))
+	healthLabel.text = 'x ' + str(PlayerVariables.lemurHealth)
+	container.add_child(healthLabel)
 
 func _on_my_signal(container):
-	print("jdjd")
 	label.add_theme_color_override("font_color", Color("000000"))
 	label.text = str(PlayerVariables.score)
 	container.add_child(label)
+
+func _on_lemur_health_refresh():
+	healthLabel.text = 'x ' + str(PlayerVariables.lemurHealth)
