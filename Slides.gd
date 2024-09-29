@@ -32,3 +32,7 @@ func _update_animation():
 func _process(delta):
 	if Input.is_action_just_pressed("interaction"):
 		Global.goto_scene(Global.MAIN_SCENE_PATH)
+	if Input.is_action_just_pressed("ui_text_caret_right"):
+		current_frame += 1
+		sprite.frame = current_frame
+		_update_animation()

@@ -13,8 +13,8 @@ func _process(delta):
 func save_game():
 	var file = FileAccess.open(Global.GAME_SAVE_PATH, FileAccess.WRITE)
 	var save_dict = {
-		"pos": var_to_str(PlayerVariables.pos),
-		"score": var_to_str(PlayerVariables.score)
+		"score": var_to_str(PlayerVariables.score),
+		"finished_levels": var_to_str(PlayerVariables.finished_levels)
 	}
 	print(save_dict)
 	var json = JSON.stringify(save_dict)

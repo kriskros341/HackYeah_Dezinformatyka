@@ -73,10 +73,7 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	var sprite_width = $Node2D/Sprite2D.texture.get_width()
-	# Check for screen boundaries (only for x)
-	if position.x - sprite_width / 2 < 0:
-		position.x = sprite_width / 2
-		velocity.x = 0  # Stop movement if hitting left edge
+	
 
 	move_and_slide()
 	

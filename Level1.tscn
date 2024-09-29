@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://di1vocol5ammk"]
+[gd_scene load_steps=13 format=3 uid="uid://di1vocol5ammk"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="1_a4fk5"]
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_a88h2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://csr6swyt1j22l" path="res://HUD/Counters.tscn" id="7_rflko"]
 [ext_resource type="PackedScene" uid="uid://cudxqj14uigb7" path="res://brat.tscn" id="9_8owml"]
 [ext_resource type="PackedScene" uid="uid://8xda50n77raq" path="res://rock.tscn" id="9_uv0x0"]
+[ext_resource type="PackedScene" path="res://Cog.tscn" id="10_h5a8c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bngj0"]
 texture = ExtResource("1_a4fk5")
@@ -518,7 +519,7 @@ motion_scale = Vector2(0.1, 0.1)
 motion_offset = Vector2(-100, -100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(700.25, 128.035)
+position = Vector2(652, 142)
 scale = Vector2(3.06543, 2.92604)
 texture = ExtResource("6_rsouy")
 
@@ -544,3 +545,6 @@ position = Vector2(1039, 175)
 
 [node name="Spider4" parent="." instance=ExtResource("6_psfqb")]
 position = Vector2(2274, 160)
+
+[node name="Cog" parent="." instance=ExtResource("10_h5a8c")]
+position = Vector2(2885, 70)
