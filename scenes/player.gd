@@ -102,6 +102,8 @@ func _on_hitbox_body_entered(body):
 	print(body, "2")
 	if body.name == "Spider":
 		take_damage()
+	if body.name == "ROCK":
+		take_damage()
 
 func take_damage():
 	activate_grace_period()
