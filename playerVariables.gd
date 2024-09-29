@@ -3,6 +3,7 @@ extends Node
 var score
 var pos: Vector2
 var pos2: Vector2
+var isBratActive = false
 
 signal increment_score_signal
 

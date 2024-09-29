@@ -3,7 +3,6 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1q8vs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pqoe2"]
-load_path = "res://.godot/imported/tilesetOpenGame.png-b02af09e29f211801c5853e79f65c56d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftxis"]
 texture = SubResource("CompressedTexture2D_pqoe2")

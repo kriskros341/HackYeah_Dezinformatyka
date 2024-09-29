@@ -11,6 +11,7 @@ var direction: Vector2 = Vector2.LEFT
 # Reference to the left and right boundaries
 @onready var left_boundary = $Area2D_Left
 @onready var right_boundary = $Area2D_Right
+@onready var sprite = $Sprite2D
 
 # Reference to the TileMap containing the boundaries (make sure you assign this in the editor)
 @onready var boundary_tilemap: TileMap = $"../TileMap2"
@@ -44,6 +45,7 @@ func _physics_process(delta):
 
 	if is_on_wall():
 		direction.x = -direction.x  # Move to the right if at the left boundary
+		sprite.flip_h = direction.x > 0
 
 	velocity.x = direction.x * SPEED
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://m5tloi44tk4f"]
+[gd_scene load_steps=8 format=3 uid="uid://m5tloi44tk4f"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="1_frkbr"]
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_xpg5g"]
 [ext_resource type="Script" path="res://TrashPiles.gd" id="3_oo7bk"]
 [ext_resource type="PackedScene" uid="uid://chfk7ghtmg3vw" path="res://misc/TrashPile.tscn" id="4_yvyco"]
+[ext_resource type="PackedScene" uid="uid://ftrtthyt76tj" path="res://foes/Spider.tscn" id="5_h826i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y82uk"]
 texture = ExtResource("1_frkbr")
@@ -173,3 +174,9 @@ position = Vector2(1999, -16)
 
 [node name="TrashPile9" parent="TrashPiles" instance=ExtResource("4_yvyco")]
 position = Vector2(1999, 178)
+
+[node name="Spider" parent="TrashPiles" instance=ExtResource("5_h826i")]
+position = Vector2(337, 211)
+
+[node name="Spider2" parent="TrashPiles" instance=ExtResource("5_h826i")]
+position = Vector2(1777, 299)
