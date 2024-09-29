@@ -5,6 +5,7 @@ var pos: Vector2
 var pos2: Vector2
 var isBratActive: bool
 var lemurHealth: int
+var finished_levels: int
 
 signal increment_score_signal
 signal lemur_health
@@ -38,6 +39,7 @@ func load_game():
 		PlayerVariables.score = 0
 		PlayerVariables.isBratActive = false
 		PlayerVariables.lemurHealth = 3
+		PlayerVariables.finished_levels = 0
 		return;
 		
 	var file = FileAccess.open(Global.GAME_SAVE_PATH, FileAccess.READ)
