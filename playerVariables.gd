@@ -21,6 +21,8 @@ func lemur_damage():
 
 func reset_health():
 	lemurHealth = 3
+	if isBratActive:
+		lemurHealth = 5
 	lemur_health.emit()
 
 # Called when the node enters the scene tree for the first time.

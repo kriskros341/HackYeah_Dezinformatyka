@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ceay06o3cajst"]
+[gd_scene load_steps=12 format=3 uid="uid://ceay06o3cajst"]
 
 [ext_resource type="Script" path="res://scenes/OtherPlayer.gd" id="1_4va0b"]
 [ext_resource type="Texture2D" uid="uid://cu2fu4lb15pgb" path="res://run.png" id="2_k7hbx"]
@@ -82,6 +82,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hbcv"]
 size = Vector2(27, 17)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wtak"]
+size = Vector2(29, 19)
+
 [node name="OtherPlayer" type="CharacterBody2D"]
 script = ExtResource("1_4va0b")
 
@@ -109,3 +112,14 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 7.5)
 shape = SubResource("RectangleShape2D_6hbcv")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_7wtak")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Variables to handle jumping
 var jumps_left = 1  # Allow one initial jump and one double jump
-
+var is_grace_period_active = false
 var screen_size
 func _ready():
 	pass
@@ -22,6 +22,14 @@ func _ready():
 
 @onready var tail = $Node2D/TailAnimation
 @onready var body = $Node2D/BodyAnimation
+
+@onready var grace_timer = $Timer  # Assuming the Timer is a direct child of this node
+
+# Function to activate the grace period
+func activate_grace_period():
+	if not is_grace_period_active:
+		is_grace_period_active = true
+		grace_timer.start()  # Start the timer
 
 func _process(delta: float) -> void:
 	var direction = Input.get_axis("ui_text_caret_left", "ui_text_caret_right")
@@ -81,3 +89,21 @@ func _on_trash_pile_area_shape_entered(area_rid, area, area_shape_index, local_s
 	print(area_rid, area, area_shape_index, local_shape_index)
 	pass # Replace with function body.
 	
+func _on_hitbox_body_entered(body):
+	print(body)
+	if is_grace_period_active:
+		return
+	print(body, "2")
+	if body.name == "Spider":
+		take_damage()
+	if body.name == "ROCK":
+		take_damage()
+
+func take_damage():
+	activate_grace_period()
+	print("jd")
+	PlayerVariables.lemur_damage()
+
+
+func _on_timer_timeout():
+	is_grace_period_active = false  # End the grace period

@@ -22,11 +22,16 @@ func _ready():
 func on_trash_pile_left(body, trashPile):
 	if body.name == "CharacterBody2D":  # Assuming the player node is named "Player"
 		trashPile.is_inside = false
+	if body.name == "OtherPlayer":
+		trashPile.is_inside = false
 
 # Handle when a player enters the trash pile
 func on_trash_pile_entered(body, trashPile):
+	print(body.name)
 	# Check if the entering body is the player (you might need to adapt this check)
 	if body.name == "CharacterBody2D":  # Assuming the player node is named "Player"
+		trashPile.is_inside = true
+	if body.name == "OtherPlayer":
 		trashPile.is_inside = true
 
 func on_scavenge_trash_pile():

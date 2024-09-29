@@ -17,21 +17,13 @@ func _process(delta):
 var brat_player_scene = preload("res://scenes/OtherPlayer.tscn")
 var brat_player_instance = null
 
-signal brat_interact
-
-signal camera_far
-
 func interact():
 	if not brat_player_instance:
 		$Area2D.hide()
 		brat_player_instance = brat_player_scene.instantiate()
 		brat_player_instance.position.x = brat_player_instance.position.x + 10
-	 #override controls?)
-		brat_interact.emit()
 		PlayerVariables.isBratActive = true
 		add_child(brat_player_instance)
-		print("camera far emit")
-		camera_far.emit()
 		
 func _on_area_2d_body_entered(body):
 	if body.name == "CharacterBody2D":
