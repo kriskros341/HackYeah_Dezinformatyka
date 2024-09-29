@@ -3,6 +3,7 @@ extends Node
 var score
 var pos: Vector2
 var pos2: Vector2
+var isBratActive: bool
 
 signal increment_score_signal
 
@@ -23,6 +24,7 @@ func load_game():
 		PlayerVariables.pos = Vector2.ZERO
 		PlayerVariables.pos2 = Vector2.ZERO
 		PlayerVariables.score = 0
+		PlayerVariables.isBratActive = false
 		return;
 		
 	var file = FileAccess.open(Global.GAME_SAVE_PATH, FileAccess.READ)

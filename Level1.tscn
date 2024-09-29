@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://di1vocol5ammk"]
+[gd_scene load_steps=12 format=3 uid="uid://di1vocol5ammk"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="1_a4fk5"]
 [ext_resource type="PackedScene" uid="uid://bjl3p8qtnajeh" path="res://TileMap.tscn" id="1_nwop3"]
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_a88h2"]
 [ext_resource type="PackedScene" uid="uid://chfk7ghtmg3vw" path="res://misc/TrashPile.tscn" id="3_mrafb"]
 [ext_resource type="Script" path="res://TrashPiles.gd" id="4_apv0v"]
+[ext_resource type="PackedScene" uid="uid://ch2f5p8syfhhf" path="res://foes/Spider.tscn" id="6_psfqb"]
 [ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="6_rsouy"]
 [ext_resource type="PackedScene" uid="uid://csr6swyt1j22l" path="res://HUD/Counters.tscn" id="7_rflko"]
-[ext_resource type="PackedScene" uid="uid://ftrtthyt76tj" path="res://foes/Spider.tscn" id="6_psfqb"]
+[ext_resource type="PackedScene" uid="uid://cudxqj14uigb7" path="res://brat.tscn" id="9_8owml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bngj0"]
 texture = ExtResource("1_a4fk5")
@@ -525,5 +526,7 @@ texture = ExtResource("6_rsouy")
 
 [node name="Spider" parent="." instance=ExtResource("6_psfqb")]
 position = Vector2(265, 101)
+
+[node name="brat" parent="." instance=ExtResource("9_8owml")]
 
 [editable path="TileMap"]
