@@ -16,6 +16,8 @@ func increment_score():
 	
 func lemur_damage():
 	lemurHealth -= 1
+	if (lemurHealth == 0):
+		Global.goto_scene(Global.GAME_OVER_PATH)
 	print("lemur_damage")
 	lemur_health.emit()
 

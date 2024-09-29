@@ -4,6 +4,7 @@ var MAIN_SCENE_PATH = "res://main.tscn"
 var TASKLIST_SCENE_PATH = "res://TaskList.tscn"
 var LEVEL1_SCENE_PATH = "res://Level1.tscn"
 var LEVEL2_SCENE_PATH = "res://Level2.tscn"
+var GAME_OVER_PATH = "res://GameOver.tscn"
 
 var GAME_SAVE_PATH = "game_state.json"
 
