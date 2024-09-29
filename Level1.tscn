@@ -510,7 +510,7 @@ motion_scale = Vector2(0.1, 0.1)
 motion_offset = Vector2(-100, -100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(700.25, 128.035)
+position = Vector2(652, 142)
 scale = Vector2(3.06543, 2.92604)
 texture = ExtResource("6_rsouy")
 
