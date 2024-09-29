@@ -22,6 +22,9 @@ func _process(delta):
 		elif current_idx == 0:
 			PlayerVariables.pos = Vector2.ZERO
 			Global.goto_scene(Global.LEVEL1_SCENE_PATH)
+		elif current_idx == 1:
+			PlayerVariables.pos = Vector2.ZERO
+			Global.goto_scene(Global.LEVEL2_SCENE_PATH)
 	
 	if Input.is_action_just_pressed("ui_up"):
 		current_idx -= 1
