@@ -32,19 +32,3 @@ offset_left = -71.556
 offset_top = -76.208
 offset_right = 0.375977
 offset_bottom = 87.496
-
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-text = "POZIOM 1"
-
-[node name="Label2" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-text = "POZIOM 2"
-
-[node name="Label3" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-text = "POZIOM 3"
-
-[node name="Label4" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-text = "WYJŚCIE"

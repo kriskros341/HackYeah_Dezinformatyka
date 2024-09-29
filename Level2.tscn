@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://8tavauw6n1yv"]
+[gd_scene load_steps=8 format=3 uid="uid://m5tloi44tk4f"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="1_frkbr"]
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_xpg5g"]
 [ext_resource type="Script" path="res://TrashPiles.gd" id="3_oo7bk"]
 [ext_resource type="PackedScene" uid="uid://chfk7ghtmg3vw" path="res://misc/TrashPile.tscn" id="4_yvyco"]
-[ext_resource type="PackedScene" uid="uid://ch2f5p8syfhhf" path="res://foes/Spider.tscn" id="5_h826i"]
+[ext_resource type="PackedScene" uid="uid://ftrtthyt76tj" path="res://foes/Spider.tscn" id="5_h826i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y82uk"]
 texture = ExtResource("1_frkbr")
