@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://TrashPiles.gd" id="4_apv0v"]
 [ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="6_rsouy"]
 [ext_resource type="PackedScene" uid="uid://csr6swyt1j22l" path="res://HUD/Counters.tscn" id="7_rflko"]
+[ext_resource type="PackedScene" uid="uid://ftrtthyt76tj" path="res://foes/Spider.tscn" id="6_psfqb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bngj0"]
 texture = ExtResource("1_a4fk5")
@@ -521,5 +522,8 @@ texture = ExtResource("6_rsouy")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Counters" parent="CanvasLayer" instance=ExtResource("7_rflko")]
+
+[node name="Spider" parent="." instance=ExtResource("6_psfqb")]
+position = Vector2(265, 101)
 
 [editable path="TileMap"]
