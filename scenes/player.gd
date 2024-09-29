@@ -53,7 +53,6 @@ func _process(delta: float) -> void:
 	PlayerVariables.pos = position
 
 func _physics_process(delta):
-	print("PLAYER")
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -119,3 +118,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Spider":
 		focused_enemy = null
 	pass # Replace with function body.
+
+
+func _on_generator_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	Global.goto_scene(Global.MAIN_SCENE_PATH)
+	PlayerVariables.finished_levels += 1
+	PlayerVariables.pos = Vector2.ZERO

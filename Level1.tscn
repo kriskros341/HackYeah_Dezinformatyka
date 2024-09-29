@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d30xbb6ktsf" path="res://scenes/player.tscn" id="2_a88h2"]
 [ext_resource type="PackedScene" uid="uid://chfk7ghtmg3vw" path="res://misc/TrashPile.tscn" id="3_mrafb"]
 [ext_resource type="Script" path="res://TrashPiles.gd" id="4_apv0v"]
-[ext_resource type="PackedScene" uid="uid://ch2f5p8syfhhf" path="res://foes/Spider.tscn" id="6_psfqb"]
+[ext_resource type="PackedScene" uid="uid://ftrtthyt76tj" path="res://foes/Spider.tscn" id="6_psfqb"]
 [ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="6_rsouy"]
 [ext_resource type="PackedScene" uid="uid://csr6swyt1j22l" path="res://HUD/Counters.tscn" id="7_rflko"]
 [ext_resource type="PackedScene" uid="uid://cudxqj14uigb7" path="res://brat.tscn" id="9_8owml"]
