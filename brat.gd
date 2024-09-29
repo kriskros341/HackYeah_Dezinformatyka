@@ -8,6 +8,7 @@ func _ready():
 	if PlayerVariables.isBratActive:
 		interact()
 		return
+	
 	animated_sprite.play("brat")
 
 func _process(delta):

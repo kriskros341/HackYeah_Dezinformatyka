@@ -8,6 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var grace_timer = $Timer  # Assuming the Timer is a direct child of this node
 
 var is_grace_period_active = false
+var focused_enemy
 
 signal camera_far
 
@@ -37,13 +38,14 @@ func _process(delta: float) -> void:
 	body.play("run")
 	if direction:
 		$Node2D.scale.x = direction
-		
 	else:
 		body.stop()
 		pass
 		#animated_sprite.stop()
 		
 	if Input.is_action_just_pressed("interaction"):
+		if focused_enemy:
+			focused_enemy.queue_free()
 		tail.play("attack")
 		
 			
@@ -103,3 +105,17 @@ func take_damage():
 
 func _on_timer_timeout():
 	is_grace_period_active = false  # End the grace period
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Spider":
+		print("FEIN")
+		focused_enemy = body
+		
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.name == "Spider":
+		focused_enemy = null
+	pass # Replace with function body.

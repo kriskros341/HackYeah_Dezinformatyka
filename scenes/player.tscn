@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://d30xbb6ktsf"]
+[gd_scene load_steps=14 format=3 uid="uid://d30xbb6ktsf"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_4s8sa"]
 [ext_resource type="Texture2D" uid="uid://cu2fu4lb15pgb" path="res://run.png" id="2_3o6fc"]
 [ext_resource type="Texture2D" uid="uid://bik6ccemya0d5" path="res://tailattack.png" id="3_u63rh"]
+[ext_resource type="Script" path="res://scenes/area_attack.gd" id="4_uim5f"]
 
 [sub_resource type="Animation" id="Animation_uxed7"]
 length = 0.001
@@ -85,6 +86,9 @@ size = Vector2(32, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2f2kj"]
 size = Vector2(33, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rqg1"]
+size = Vector2(60, 39)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_4s8sa")
 
@@ -124,5 +128,14 @@ shape = SubResource("RectangleShape2D_2f2kj")
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_uim5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10, -1)
+shape = SubResource("RectangleShape2D_8rqg1")
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
