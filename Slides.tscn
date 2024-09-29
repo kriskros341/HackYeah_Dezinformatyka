@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ktka4i2u35e3"]
+[gd_scene load_steps=8 format=3 uid="uid://maix2sw3mmy4"]
 
 [ext_resource type="Script" path="res://Slides.gd" id="1_i4qw0"]
 [ext_resource type="Texture2D" uid="uid://btwfmy3udxnbv" path="res://slajd1.png" id="1_ky23q"]
@@ -34,8 +34,8 @@ animations = [{
 script = ExtResource("1_i4qw0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(570, 328)
-scale = Vector2(1.156, 0.632)
+position = Vector2(587, 321)
+scale = Vector2(0.695, 0.632)
 sprite_frames = SubResource("SpriteFrames_fpjtx")
 frame_progress = 0.904629
 
