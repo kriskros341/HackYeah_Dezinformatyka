@@ -27,7 +27,6 @@ func _ready():
 	label.text = str(PlayerVariables.score)
 	container.add_child(label)
 	
-	
 	healthLabel.add_theme_color_override("font_color", Color("000000"))
 	healthLabel.text = 'x ' + str(PlayerVariables.lemur_health)
 
