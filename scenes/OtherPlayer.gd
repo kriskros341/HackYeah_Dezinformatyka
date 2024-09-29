@@ -11,11 +11,12 @@ var jumps_left = 1  # Allow one initial jump and one double jump
 
 var screen_size
 func _ready():
-	#animated_tail_sprite.play("idle_tale")
-	screen_size = get_viewport_rect().size
-	position.x = 300
-	position.y = -300
-	position = PlayerVariables.pos
+	pass
+	##animated_tail_sprite.play("idle_tale")
+	#screen_size = get_viewport_rect().size
+	#position.x = 300
+	#position.y = -300
+	#position = PlayerVariables.pos
 
 #@onready var animated_sprite = $AnimationPlayer
 
@@ -23,7 +24,7 @@ func _ready():
 @onready var body = $Node2D/BodyAnimation
 
 func _process(delta: float) -> void:
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("ui_text_caret_left", "ui_text_caret_right")
 	body.play("run")
 	if direction:
 		$Node2D.scale.x = direction
@@ -37,17 +38,17 @@ func _process(delta: float) -> void:
 		tail.play("attack")
 		
 			
-	PlayerVariables.pos = position
+	PlayerVariables.pos2 = position
 		
 
 func _physics_process(delta):
-	print("PLAYER")
-	# Add the gravity.
+	print("Other PLAYER")
+	## Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
+#
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_text_caret_up"):
 		if is_on_floor():
 			# Reset jumps when on the floor
 			jumps_left = 1
@@ -58,7 +59,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("ui_text_caret_left", "ui_text_caret_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:

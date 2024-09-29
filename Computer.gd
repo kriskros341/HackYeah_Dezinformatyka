@@ -13,8 +13,10 @@ func _process(delta):
 		Global.goto_scene(Global.TASKLIST_SCENE_PATH)
 
 func _on_body_entered(body):
-	is_near = true
+	if body.name == "CharacterBody2D":
+		is_near = true
 
 
 func _on_body_exited(body):
-	is_near = false
+	if body.name == "CharacterBody2D":
+		is_near = false
