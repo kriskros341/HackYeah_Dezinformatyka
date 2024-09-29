@@ -15,6 +15,7 @@ func increment_score():
 	
 func lemur_damage():
 	lemurHealth -= 1
+	print("lemur_damage")
 	lemur_health.emit()
 
 

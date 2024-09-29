@@ -32,7 +32,7 @@ func _ready():
 	healthLabel.text = 'x ' + str(PlayerVariables.lemur_health)
 
 	PlayerVariables.connect("increment_score_signal", func(): _on_my_signal(container))
-	PlayerVariables.connect("lemur_damage", _on_lemur_health_refresh)
+	PlayerVariables.connect("lemur_health", _on_lemur_health_refresh)
 	
 	
 	var texture_rect2 = TextureRect.new()

@@ -5,6 +5,15 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var grace_timer = $Timer  # Assuming the Timer is a direct child of this node
+
+var is_grace_period_active = false
+
+# Function to activate the grace period
+func activate_grace_period():
+	if not is_grace_period_active:
+		is_grace_period_active = true
+		grace_timer.start()  # Start the timer
 
 # Variables to handle jumping
 var jumps_left = 1  # Allow one initial jump and one double jump
@@ -13,7 +22,6 @@ var jumps_left = 1  # Allow one initial jump and one double jump
 var screen_size
 
 func _ready():
-
 	#animated_tail_sprite.play("idle_tale")
 	screen_size = get_viewport_rect().size
 	position.x = 300
@@ -83,5 +91,23 @@ func _on_trash_pile_area_shape_entered(area_rid, area, area_shape_index, local_s
 	print(area_rid, area, area_shape_index, local_shape_index)
 	pass # Replace with function body.
 
+
 func  _on_camera_far():
 	$Camera2D.scale = Vector2(1, 1)
+
+func _on_hitbox_body_entered(body):
+	print(body)
+	if is_grace_period_active:
+		return
+	print(body, "2")
+	if body.name == "Spider":
+		take_damage()
+
+func take_damage():
+	activate_grace_period()
+	print("jd")
+	PlayerVariables.lemur_damage()
+
+
+func _on_timer_timeout():
+	is_grace_period_active = false  # End the grace period

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch2f5p8syfhhf"]
 
-[ext_resource type="Texture2D" path="res://assets/spidererer.png" id="1_7gbwx"]
+[ext_resource type="Texture2D" uid="uid://qbq7wiexcee4" path="res://assets/spidererer.png" id="1_7gbwx"]
 [ext_resource type="Script" path="res://foes/Spider.gd" id="1_bxekb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvt6j"]
