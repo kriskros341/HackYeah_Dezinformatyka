@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 		#animated_sprite.stop()
 		
 	if Input.is_action_just_pressed("interaction"):
+		print(focused_enemy)
 		if focused_enemy:
 			focused_enemy.queue_free()
 		tail.play("attack")
@@ -108,6 +109,7 @@ func _on_timer_timeout():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("body e")
 	if body.name == "Spider":
 		print("FEIN")
 		focused_enemy = body
@@ -116,6 +118,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	print("body l")
 	if body.name == "Spider":
 		focused_enemy = null
 	pass # Replace with function body.
