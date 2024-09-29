@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://i6d8guhhjk2t"]
+[gd_scene load_steps=10 format=3 uid="uid://i6d8guhhjk2t"]
 
 [ext_resource type="Texture2D" uid="uid://bmpy23hh32ph7" path="res://tilesetOpenGame.png" id="1_a4fk5"]
 [ext_resource type="PackedScene" uid="uid://bjl3p8qtnajeh" path="res://TileMap.tscn" id="1_nwop3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chfk7ghtmg3vw" path="res://misc/TrashPile.tscn" id="3_mrafb"]
 [ext_resource type="Script" path="res://TrashPiles.gd" id="4_apv0v"]
 [ext_resource type="Texture2D" uid="uid://cqqxcheepggab" path="res://trash.png" id="6_rsouy"]
+[ext_resource type="PackedScene" uid="uid://bk516qwdji3tx" path="res://rock.tscn" id="7_ph1ig"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bngj0"]
 texture = ExtResource("1_a4fk5")
@@ -218,5 +219,10 @@ motion_offset = Vector2(-100, -100)
 position = Vector2(700.25, 128.035)
 scale = Vector2(3.06543, 2.92604)
 texture = ExtResource("6_rsouy")
+
+[node name="rocks" type="Node2D" parent="."]
+
+[node name="rock" parent="rocks" instance=ExtResource("7_ph1ig")]
+position = Vector2(1151, 177)
 
 [editable path="TileMap"]

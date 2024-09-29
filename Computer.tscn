@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cv6nsc77ufugq"]
 
 [ext_resource type="Script" path="res://Computer.gd" id="1_n572m"]
-[ext_resource type="Texture2D" uid="uid://yq5ja3dm6rr1" path="res://assets/icon.svg" id="2_qjttt"]
+[ext_resource type="Texture2D" uid="uid://bi1h2huerogw0" path="res://pc.png" id="2_mp1x7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vxu"]
 size = Vector2(164, 151)
@@ -10,7 +10,8 @@ size = Vector2(164, 151)
 script = ExtResource("1_n572m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qjttt")
+texture = ExtResource("2_mp1x7")
+vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -4.5)
