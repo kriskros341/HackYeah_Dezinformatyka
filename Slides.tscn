@@ -34,8 +34,8 @@ animations = [{
 script = ExtResource("1_i4qw0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(587, 321)
-scale = Vector2(0.695, 0.632)
+position = Vector2(957.5, 539.5)
+scale = Vector2(1.931, 1.085)
 sprite_frames = SubResource("SpriteFrames_fpjtx")
 frame_progress = 0.904629
 
